@@ -1,0 +1,14 @@
+{
+	"description": "Buildkite authentication plugin for Docker",
+	"entrypoint": ["/docker-buildkite-authorization-plugin"],
+	"network": {
+	  "type": "host"
+	},
+	"interface" : {
+    "types": ["docker.authz/1.0"],
+    "socket": "buildkite-docker.sock"
+	},
+	"linux": {
+		"capabilities": ["CAP_SYS_ADMIN"]
+	}
+}
